@@ -1,18 +1,19 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import os
-from PIL import Image
-#import matplotlib.pyplot as plt
 st.title("Exercices")
 
+st.header("Veuillez installer streamlit et pandas")
+st.code("""
+import streamlit as st
+import pandas as pd
+""")
 
 # exercice 1
 st.header("Afficher le Dataset")
 df=pd.read_csv("Dataset_exercice.csv")
 st.dataframe(df)
 
-st.write("A vous de trouver les fonctions manquantes :")
+st.write("À vous de trouver les fonctions manquantes :")
 
 st.code("""
 *****("Afficher le Dataset")
@@ -33,7 +34,7 @@ filtre_annee=sorted(df["Annee_voiture"].unique())
 annee=st.selectbox("Filtre année",filtre_annee)
 st.dataframe(df.loc[df["Annee_voiture"]==annee])
 
-st.write("A vous de trouver les fonctions manquantes :")
+st.write("À vous de trouver les fonctions manquantes :")
 st.code("""
 filtre_annee=sorted(df["Annee_voiture"].unique())
 annee=*******("Filtre années",filtre_annee)
@@ -52,7 +53,7 @@ st.header("Afficher un graphique :")
 df_ex3=df["marque_voiture"].value_counts()
 st.bar_chart(df_ex3)
 
-st.write("A vous de trouver les fonctions manquantes :")
+st.write("À vous de trouver les fonctions manquantes :")
 st.code(""" 
 df_ex3=df["marque_voiture"].value_counts()
 *********(df_ex3)
@@ -86,7 +87,7 @@ col1, col2=st.columns(2)
 col1.line_chart(df_ex4,use_container_width=True)
 col2.bar_chart(df_ex3)
 
-st.write("A vous de trouver les fonctions manquantes :")
+st.write("À vous de trouver les fonctions manquantes :")
 st.code(""" 
 marque_voiture=df["marque_voiture"].unique()
 annee=df["Annee_voiture"].unique()
